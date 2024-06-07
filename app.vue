@@ -7,11 +7,11 @@ const { $fb } = useNuxtApp();
 const facebookPixelCode = "980460796412146,1114858976263485";
 const gtagId = "GTM-TH6P3MGK";
 const googleSiteCode = "uoxRLwDbag-9GSqoLvnoloP2gBaJhk6LXmj-lpTPNLE";
-import { useAnalytics } from '@nuxtjs/google-analytics'
+// import { useAnalytics } from '@nuxtjs/google-analytics'
 
 const gaId = 'G-8QD1DD7Y33' // Replace with your Google Analytics ID
 
-const analytics = useAnalytics()
+// const analytics = useAnalytics()
 
 const { initialize, enableAnalytics } = useGtag();
 
@@ -39,7 +39,7 @@ onMounted(() => {
     enableAnalytics(gtagId);
   }
   if(gaId) {
-    analytics.init(gaId)
+    // analytics.init(gaId)
   }
 });
 </script>
