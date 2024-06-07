@@ -9,6 +9,8 @@ const { $fb } = useNuxtApp();
 const facebookPixelCode = "980460796412146,1114858976263485";
 const gtagId = "GTM-TH6P3MGK";
 
+const { gtag, initialize } = useGtag();
+
 onMounted(() => {
   if (facebookPixelCode && facebookPixelCode.trim() !== "") {
     const fbCodes = facebookPixelCode.trim().split(",");
@@ -20,14 +22,7 @@ onMounted(() => {
     }
   }
   if (gtagId) {
-    function gtag() {
-      window.dataLayer.push(arguments);
-    }
-
-    window.dataLayer = window.dataLayer || [];
-
-    gtag("js", new Date());
-    gtag("config", gtagId);
+    initialize(gtagId)
   }
 });
 </script>
