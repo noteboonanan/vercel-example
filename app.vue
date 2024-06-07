@@ -5,10 +5,10 @@
 <script setup>
 const { $fb } = useNuxtApp();
 const facebookPixelCode = "980460796412146,1114858976263485";
-const gtagId = "GTM-TH6P3MGK";
-const googleSiteCode = "uoxRLwDbag-9GSqoLvnoloP2gBaJhk6LXmj-lpTPNLE"
+const gtagId = "G-8QD1DD7Y33";
+const googleSiteCode = "uoxRLwDbag-9GSqoLvnoloP2gBaJhk6LXmj-lpTPNLE";
 
-const { gtag, initialize, enableAnalytics } = useGtag();
+const { initialize, enableAnalytics } = useGtag();
 
 useHead({
   meta: [
