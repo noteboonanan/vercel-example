@@ -39,8 +39,7 @@ onMounted(() => {
     enableAnalytics(gtagId);
   }
   if(gaId) {
-    analytics.set('id', gaId)
-    analytics.enable()
+    analytics.init(gaId)
   }
 });
 </script>
