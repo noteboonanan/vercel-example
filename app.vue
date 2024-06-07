@@ -1,17 +1,24 @@
 <template>
-  <div>
-    Welcome to Nuxt.js!
-  </div>
+  <div>Welcome to Nuxt.js!</div>
 </template>
 
 <script setup>
 const { $fb } = useNuxtApp();
 const facebookPixelCode = "980460796412146,1114858976263485";
 const gtagId = "GTM-TH6P3MGK";
+const googleSiteCode = "uoxRLwDbag-9GSqoLvnoloP2gBaJhk6LXmj-lpTPNLE"
 
 const { gtag, initialize, enableAnalytics } = useGtag();
 
-
+useHead({
+  meta: [
+    {
+      hid: "google-site-verification",
+      name: "google-site-verification",
+      content: googleSiteCode,
+    },
+  ],
+});
 onMounted(() => {
   if (facebookPixelCode && facebookPixelCode.trim() !== "") {
     const fbCodes = facebookPixelCode.trim().split(",");
@@ -23,8 +30,8 @@ onMounted(() => {
     }
   }
   if (gtagId) {
-    initialize(gtagId)
-    enableAnalytics(gtagId)
+    initialize(gtagId);
+    enableAnalytics(gtagId);
   }
 });
 </script>
