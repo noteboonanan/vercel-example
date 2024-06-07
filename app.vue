@@ -9,7 +9,8 @@ const { $fb } = useNuxtApp();
 const facebookPixelCode = "980460796412146,1114858976263485";
 const gtagId = "GTM-TH6P3MGK";
 
-const { gtag, initialize } = useGtag();
+const { gtag, initialize, enableAnalytics } = useGtag();
+
 
 onMounted(() => {
   if (facebookPixelCode && facebookPixelCode.trim() !== "") {
@@ -23,6 +24,7 @@ onMounted(() => {
   }
   if (gtagId) {
     initialize(gtagId)
+    enableAnalytics(gtagId)
   }
 });
 </script>
