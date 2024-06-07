@@ -15,5 +15,8 @@
     "nuxt3-meta-pixel": "^1.0.9",
     "vue": "^3.4.27",
     "vue-router": "^4.3.2"
+  },
+  "devDependencies": {
+    "@nuxtjs/google-analytics": "^2.4.0"
   }
 }
