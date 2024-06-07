@@ -1,6 +1,6 @@
 <template>
   <div>
-    <NuxtWelcome />
+    Welcome to Nuxt.js!
   </div>
 </template>
 
