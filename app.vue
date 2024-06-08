@@ -6,10 +6,9 @@
 const { $fb } = useNuxtApp();
 const facebookPixelCode = "980460796412146,1114858976263485";
 const gtagId = "GTM-TH6P3MGK";
+const gaId = "G-8QD1DD7Y33"; // Replace with your Google Analytics ID
 const googleSiteCode = "uoxRLwDbag-9GSqoLvnoloP2gBaJhk6LXmj-lpTPNLE";
 // import { useAnalytics } from '@nuxtjs/google-analytics'
-
-const gaId = 'G-8QD1DD7Y33' // Replace with your Google Analytics ID
 
 // const analytics = useAnalytics()
 
@@ -21,6 +20,12 @@ useHead({
       hid: "google-site-verification",
       name: "google-site-verification",
       content: googleSiteCode,
+    },
+  ],
+  script: [
+    {
+      src: gaId && `https://www.googletagmanager.com/gtag/js?id=${gaId}`,
+      async: true,
     },
   ],
 });
@@ -38,8 +43,14 @@ onMounted(() => {
     initialize(gtagId);
     enableAnalytics(gtagId);
   }
-  if(gaId) {
-    // analytics.init(gaId)
+  if (gaId) {
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+
+    gtag("config", gaId);
   }
 });
 </script>
